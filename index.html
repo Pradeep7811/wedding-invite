@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d27d0347b7e7f3dbffae06e30d754f1e3281fe6e
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -328,6 +332,7 @@ color:white;
 <h2>🎬 A Love Story Begins</h2>
 <h1>Subhashree ❤️ Gagan</h1>
 <div class="wedding-date-badge">💍 07 JULY 2026</div>
+<div class="wedding-date-badge">#SANAN</div>
 
 <div class="countdown">
 <div class="box"><span id="days">0</span><br>Days</div>
@@ -502,4 +507,514 @@ for (let i = 0; i < 12; i++) {   // few petals only
 </script>
 
 </body>
+<<<<<<< HEAD
+=======
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subhashree ❤️ Gagan - Wedding Story</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+html, body{
+scroll-behavior:smooth;
+overflow-x:hidden;
+color:white;
+font-family:'Playfair Display',serif;
+}
+
+.bg{
+position:fixed;
+inset:0;
+background:
+linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+z-index:-2;
+}
+
+.overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.25);
+z-index:-1;
+}
+
+.section{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+opacity:0;
+transform:translateY(40px);
+transition:all 1s ease;
+}
+
+.section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.card{
+max-width:850px;
+padding:40px;
+border-radius:20px;
+background:rgba(0,0,0,0.45);
+border:1px solid rgba(255,215,0,0.25);
+backdrop-filter:blur(18px);
+box-shadow:0 10px 40px rgba(0,0,0,0.8);
+}
+
+h1{
+font-family:'Great Vibes',cursive;
+font-size:85px;
+color:gold;
+}
+
+h2{
+font-size:28px;
+margin-bottom:10px;
+}
+
+.section h2{
+font-family:'Great Vibes', cursive;
+font-size:34px;
+color:#ffd700;
+}
+
+p{
+font-size:18px;
+line-height:1.7;
+color:#e6e6e6;
+}
+
+.story{font-style:italic;opacity:0.9;}
+
+.countdown{
+display:flex;
+justify-content:center;
+gap:12px;
+margin-top:20px;
+flex-wrap:wrap;
+}
+
+.box{
+background:rgba(0,0,0,0.4);
+border:1px solid gold;
+padding:12px;
+border-radius:10px;
+min-width:75px;
+}
+
+.box span{
+font-size:26px;
+color:gold;
+}
+
+/* PREWEDDING GRID */
+.pw-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:14px;
+}
+
+.pw-grid img{
+width:100%;
+max-height:420px;
+object-fit:contain;
+border-radius:14px;
+cursor:pointer;
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pw-grid img:hover{
+transform:scale(1.05);
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* LIGHTBOX — FIX ONLY */
+.lightbox{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.92);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:99999;
+padding:10px;
+overflow:auto;
+}
+
+.lightbox img{
+max-width:100%;
+max-height:100%;
+width:auto;
+height:auto;
+display:block;
+margin:auto;
+border:2px solid gold;
+}
+
+/* OUTRO */
+/* OUTRO — MATCH EVENTS STYLE */
+.outro{
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.event-date{
+color:#ffd700;
+font-weight:600;
+}
+
+.wedding-date-badge{
+margin-top:10px;
+font-size:22px;
+color:#ffd700;
+font-family:'Playfair Display', serif;
+letter-spacing:1px;
+font-weight:500;
+}
+
+/* ================= MENU BUTTON ================= */
+.menu-btn{
+position:fixed;
+top:10px;
+right:10px;
+width:28px;
+cursor:pointer;
+z-index:10001;
+}
+
+.menu-btn div{
+height:2px;
+background:linear-gradient(90deg,#ffd700,#fff3b0);
+margin:4px 0;
+border-radius:5px;
+}
+
+/* ================= BLUR OVERLAY ================= */
+/* FIXED MENU OVERLAY (CONTENT HEIGHT ONLY) */
+.menu-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:none;
+z-index:10000;
+}
+
+/* active state */
+.menu-overlay.active::after{
+content:"";
+position:absolute;
+top:0;
+right:0;
+width:260px;
+
+/* 🔥 KEY FIX: limit height instead of full screen */
+height:auto;
+max-height:100vh;
+
+/* make it only cover menu area */
+bottom:auto;
+
+background:rgba(0,0,0,0.35);
+backdrop-filter:blur(10px);
+}
+
+/* ================= LEFT DRAWER MENU ================= */
+.menu{
+position:fixed;
+top:0;
+left:0;
+height:100%;
+width:260px;
+background:rgba(0,0,0,0.85);
+border-right:1px solid rgba(255,215,0,0.4);
+padding:20px;
+display:flex;
+flex-direction:column;
+gap:10px;
+transform:translateX(-100%);
+transition:0.35s ease;
+z-index:10001;
+}
+
+.menu.open{
+transform:translateX(0);
+}
+
+.menu a{
+color:#ffd700;
+text-decoration:none;
+font-size:16px;
+padding:10px;
+border-radius:8px;
+transition:0.2s;
+}
+
+.menu a:hover{
+background:rgba(255,215,0,0.1);
+color:white;
+}
+
+/* 🌹 REALISTIC ROSE PETALS */
+/* 🌹 CINEMATIC ROSE PETALS (BOLLYWOOD STYLE) */
+/* 🌹 SIMPLE REALISTIC PETALS */
+/* 🌹 SIMPLE ROSE PETALS (NO IMAGE VERSION) */
+/* 🌹 REALISTIC ROSE PETAL SHAPE */
+/* ===== ROSE PETALS BACKGROUND LAYER ===== */
+.petals {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1; /* IMPORTANT: keeps it behind content */
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  top: -10%;
+  width: 14px;
+  height: 20px;
+  background: radial-gradient(circle at 30% 30%, #ff4d4d, #b30000);
+  border-radius: 60% 40% 60% 40%;
+  opacity: 0.7;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="petals"></div>
+<div class="bg"></div>
+<div class="overlay"></div>
+
+<!-- MENU BUTTON -->
+<div class="menu-btn" onclick="toggleMenu()">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<!-- BLUR OVERLAY -->
+<div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+
+<!-- MENU DRAWER -->
+<div class="menu" id="menu">
+  <a onclick="scrollToSection(0)">Home</a>
+  <a onclick="scrollToSection(1)">Bride</a>
+  <a onclick="scrollToSection(2)">Groom</a>
+  <a onclick="scrollToSection(3)">Events</a>
+  <a onclick="scrollToSection(8)">Pre-Wedding</a>
+  <a onclick="scrollToSection(9)">Blessings</a>
+</div>
+
+<!-- INTRO -->
+<div class="section">
+<div class="card">
+<h2>🎬 A Love Story Begins</h2>
+<h1>Subhashree ❤️ Gagan</h1>
+<div class="wedding-date-badge">💍 07 JULY 2026</div>
+<div class="wedding-date-badge">#SANAN_Forever</div>
+
+<div class="countdown">
+<div class="box"><span id="days">0</span><br>Days</div>
+<div class="box"><span id="hours">0</span><br>Hours</div>
+<div class="box"><span id="minutes">0</span><br>Minutes</div>
+<div class="box"><span id="seconds">0</span><br>Seconds</div>
+</div>
+
+<p class="story">Two hearts. One destiny. Forever begins here.</p>
+</div>
+</div>
+
+<!-- BRIDE -->
+<div class="section">
+<div class="card">
+<h2>👰 Bride</h2>
+<img src="bride.jpg" style="width:280px;height:360px;object-fit:cover;border-radius:15px;border:2px solid gold;margin-top:15px;">
+<p class="story">Subhashree — a graceful soul with elegance in every step and kindness in every smile. She brings warmth, beauty, and light to every moment she enters.</p>
+</div>
+</div>
+
+<!-- GROOM -->
+<div class="section">
+<div class="card">
+<h2>🤵 Groom</h2>
+<img src="groom.jpg" style="width:280px;height:360px;object-fit:cover;border-radius:15px;border:2px solid gold;margin-top:15px;">
+<p class="story">Gagan — a calm, confident and grounded personality with a strong heart and loyal spirit. He stands steady as a companion ready to begin a lifelong journey of love.</p>
+</div>
+</div>
+
+<!-- EVENTS -->
+<div class="section"><div class="card">
+<h2>🌿 Mehendi</h2>
+<p>The Mehendi ceremony is a vibrant and joyful pre-wedding ritual where intricate henna designs are applied to the bride’s hands and feet. It represents love, beauty, and the beginning of new celebrations surrounded by music, laughter, and family bonding.</p>
+<p class="event-date">06 July 2026 | 4 PM | Gayaganda, Ganjam</p>
+</div></div>
+
+<div class="section"><div class="card">
+<h2>🎶 Sangeet</h2>
+<p>A magical evening filled with music, dance, and emotional performances from both families. The Sangeet celebrates love through rhythm, laughter, and unforgettable memories shared together.</p>
+<p class="event-date">06 July 2026 | 7 PM | Gayaganda, Ganjam</p>
+</div></div>
+
+<div class="section"><div class="card">
+<h2>🌼 Haldi</h2>
+<p>The Haldi ceremony is a sacred ritual where turmeric paste is applied to the bride and groom. It symbolizes purity, blessings, positivity, and glowing happiness before the wedding.</p>
+<p class="event-date">07 July 2026 | 10 AM | Gayaganda, Ganjam</p>
+</div></div>
+
+<div class="section"><div class="card">
+<h2>💍 Wedding</h2>
+<p>The wedding ceremony marks the divine union of two souls becoming one through sacred vows and rituals, beginning a lifelong journey of love and companionship.</p>
+<p class="event-date">07 July 2026 | 7 PM | Gayaganda, Ganjam</p>
+</div></div>
+
+<div class="section"><div class="card">
+<h2>🎉 Reception</h2>
+<p>A grand celebration hosted to honor the newlyweds. Friends and family come together to bless the couple and celebrate their new journey with joy and happiness.</p>
+<p class="event-date">10 July 2026 | Digapahandi, Ganjam</p>
+</div></div>
+
+<!-- PREWEDDING -->
+<div class="section">
+<div class="card">
+<h2>📸 Pre-Wedding Moments</h2>
+<div class="pw-grid">
+<img src="prewedding1.jpg">
+<img src="prewedding2.jpg">
+<img src="prewedding3.jpg">
+<img src="prewedding4.jpg">
+</div>
+</div>
+</div>
+
+<!-- BLESSINGS -->
+<div class="section outro">
+<div class="card">
+<h2>💌 Blessings for the Couple</h2>
+<p>
+“Come, witness the beginning of forever.<br><br>
+Two souls, one journey, one promise of love.<br>
+Your presence will turn this celebration into a memory of a lifetime.<br><br>
+✨ We warmly invite you to bless Subhashree & Gagan ✨”
+</p>
+</div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+<img id="lightboxImg">
+</div>
+
+<script>
+const sections=document.querySelectorAll('.section');
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting)e.target.classList.add('show');
+});
+},{threshold:0.3});
+
+sections.forEach(s=>observer.observe(s));
+
+const weddingDate=new Date("July 7, 2026 19:00:00").getTime();
+
+setInterval(()=>{
+let now=new Date().getTime();
+let d=weddingDate-now;
+
+document.getElementById("days").innerText=Math.floor(d/86400000);
+document.getElementById("hours").innerText=Math.floor((d%86400000)/3600000);
+document.getElementById("minutes").innerText=Math.floor((d%3600000)/60000);
+document.getElementById("seconds").innerText=Math.floor((d%60000)/1000);
+},1000);
+
+/* MENU CONTROL */
+const menu=document.getElementById("menu");
+const overlay=document.getElementById("menuOverlay");
+
+function toggleMenu(){
+  menu.classList.toggle("open");
+  overlay.classList.toggle("active", menu.classList.contains("open"));
+}
+
+function closeMenu(){
+  menu.classList.remove("open");
+  overlay.classList.remove("active");
+}
+
+function scrollToSection(index){
+  document.querySelectorAll(".section")[index].scrollIntoView({behavior:"smooth"});
+  closeMenu();
+}
+
+document.addEventListener("scroll",closeMenu);
+document.addEventListener("click",function(e){
+  if(!menu.contains(e.target) && !e.target.closest(".menu-btn")){
+    closeMenu();
+  }
+});
+
+/* ================= PREWEDDING FIX ================= */
+const lightbox=document.getElementById("lightbox");
+const lightboxImg=document.getElementById("lightboxImg");
+
+document.querySelectorAll(".pw-grid img").forEach(img=>{
+  img.addEventListener("click",()=>{
+    lightbox.style.display="flex";
+    lightboxImg.src=img.src;
+  });
+});
+
+lightbox.addEventListener("click",()=>{
+  lightbox.style.display="none";
+});
+
+/* ===== ROSE PETALS GENERATOR ===== */
+const petalContainer = document.querySelector(".petals");
+
+for (let i = 0; i < 12; i++) {   // few petals only
+  const petal = document.createElement("div");
+  petal.classList.add("petal");
+
+  petal.style.left = Math.random() * 100 + "vw";
+  petal.style.animationDuration = (6 + Math.random() * 5) + "s";
+  petal.style.opacity = 0.4 + Math.random() * 0.4;
+  petal.style.transform = `scale(${0.8 + Math.random()})`;
+
+  petalContainer.appendChild(petal);
+}
+
+</script>
+
+</body>
+>>>>>>> f5973b4ff053ced4d99985f3d4954e9e6ad73f03
+>>>>>>> d27d0347b7e7f3dbffae06e30d754f1e3281fe6e
 </html>
